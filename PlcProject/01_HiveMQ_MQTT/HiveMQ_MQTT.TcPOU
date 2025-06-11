@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="HiveMQ_MQTT" Id="{cd48a2ab-b805-47d1-894a-d08367ff474b}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK HiveMQ_MQTT
+VAR
+	asd : FB_IotMqttClient := (sHostName := '5a4bc4b2d7c240d58dfbffe85ec21b83.s1.eu.hivemq.cloud');
+	connect : BOOL := TRUE;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// asd(
+// 	sClientId:= , 
+// 	sHostName:= , 
+// 	nHostPort:= , 
+// 	sTopicPrefix:= , 
+// 	nKeepAlive:= , 
+// 	sUserName:= , 
+// 	sUserPassword:= , 
+// 	stWill:= , 
+// 	stTLS:= , 
+// 	ipMessageQueue:= , 
+// 	bError=> , 
+// 	hrErrorCode=> , 
+// 	eConnectionState=> , 
+// 	bConnected=> );
+	
+asd.Execute(connect);]]></ST>
+    </Implementation>
+    <Method Name="CyclicCode" Id="{26710d21-e884-4fe8-8ad2-06fc4f639861}">
+      <Declaration><![CDATA[METHOD CyclicCode
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

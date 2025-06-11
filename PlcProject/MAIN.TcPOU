@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="MAIN" Id="{9cdf4ae1-9b2e-4987-84f5-d15c56852726}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	programIsRunning : USINT;
+	
+	hiveMQ_MQTT : HiveMQ_MQTT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[programIsRunning := programIsRunning + 1;
+
+hiveMQ_MQTT();
+// hiveMQ_MQTT.CyclicCode();]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
